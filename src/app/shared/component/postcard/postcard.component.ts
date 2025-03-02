@@ -8,6 +8,7 @@ import { Ipost } from '../../models/post';
 })
 export class PostcardComponent implements OnInit {
   @Input() postObj!: Ipost;
+
   constructor() {}
 
   ngOnInit(): void {}

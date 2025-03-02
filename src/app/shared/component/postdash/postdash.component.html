@@ -5,8 +5,11 @@
     </button>
   </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="postArr.length > 0; else noPostcard">
   <div class="col-md-4 mb-4" *ngFor="let post of postArr">
     <app-postcard [postObj]="post"></app-postcard>
   </div>
 </div>
+<ng-template #noPostcard>
+  <p class="alert alert-danger">no Post Avalable</p>
+</ng-template>
