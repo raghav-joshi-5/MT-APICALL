@@ -1,0 +1,24 @@
+<!-- <p>post works! {{ postObj | json }}</p> -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="card" *ngIf="postObj; else noPost">
+      <div class="card-header">
+        <h3 class="m-0">{{ postObj.title }}</h3>
+      </div>
+      <div class="card-body">
+        <p class="m-0">{{ postObj.content }}</p>
+      </div>
+      <div class="card-footer">
+        <button routerLink="edit" class="btn btn-sm btn-primary mr-4">
+          Edit
+        </button>
+        <button (click)="onRemove()" class="btn btn-sm btn-danger">
+          Remove
+        </button>
+      </div>
+    </div>
+    <ng-template #noPost>
+      <p class="alert alert-danger">no post object available</p>
+    </ng-template>
+  </div>
+</div>
